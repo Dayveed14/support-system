@@ -1,0 +1,249 @@
+.dashboard-greeting {
+  margin-bottom: 28px;
+}
+
+.dashboard-greeting-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.dashboard-greeting-sub {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* STAT CARDS */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-light);
+}
+
+.stat-card-accent {
+  position: absolute;
+  top: 0; right: 0;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  transform: translate(25%, -25%);
+  opacity: 0.15;
+}
+
+.stat-card-icon {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.stat-card-value {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-card-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* AGENT PERFORMANCE */
+.section-title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  margin-bottom: 14px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.dashboard-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+}
+
+.agent-perf-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.agent-perf-row:last-child { border-bottom: none; }
+
+.agent-perf-avatar {
+  width: 36px;
+  height: 36px;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.agent-perf-info { flex: 1; min-width: 0; }
+.agent-perf-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.agent-perf-bar-wrap {
+  background: var(--surface-2);
+  border-radius: 10px;
+  height: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.agent-perf-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+.agent-perf-stats {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.agent-perf-count {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.agent-perf-sublabel {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* RECENT TICKETS */
+.recent-ticket-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.recent-ticket-item:hover { opacity: 0.8; }
+.recent-ticket-item:last-child { border-bottom: none; }
+
+.recent-ticket-info { flex: 1; min-width: 0; }
+
+.recent-ticket-id {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.recent-ticket-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recent-ticket-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* DONUT CHART */
+.category-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.category-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.category-bar-wrap {
+  flex: 2;
+  background: var(--surface-2);
+  border-radius: 6px;
+  height: 6px;
+  overflow: hidden;
+}
+
+.category-bar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.6s ease;
+}
+
+.category-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  min-width: 24px;
+  text-align: right;
+}

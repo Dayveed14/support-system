@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #0d0f14;
+  --surface: #13161e;
+  --surface-2: #1a1e2a;
+  --surface-3: #222636;
+  --border: #2a2f3e;
+  --border-light: #363d52;
+
+  --text-primary: #e8eaf2;
+  --text-secondary: #8890aa;
+  --text-muted: #565e78;
+
+  --accent: #4f7cff;
+  --accent-glow: rgba(79, 124, 255, 0.2);
+  --accent-hover: #6b92ff;
+
+  --green: #2ecc71;
+  --green-bg: rgba(46, 204, 113, 0.12);
+  --yellow: #f1c40f;
+  --yellow-bg: rgba(241, 196, 15, 0.12);
+  --orange: #e67e22;
+  --orange-bg: rgba(230, 126, 34, 0.12);
+  --red: #e74c3c;
+  --red-bg: rgba(231, 76, 60, 0.12);
+  --purple: #9b59b6;
+  --purple-bg: rgba(155, 89, 182, 0.12);
+  --teal: #1abc9c;
+  --teal-bg: rgba(26, 188, 156, 0.12);
+
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.5);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input, textarea, select {
+  font-family: var(--font-body);
+  outline: none;
+}
+
+a { text-decoration: none; color: inherit; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
