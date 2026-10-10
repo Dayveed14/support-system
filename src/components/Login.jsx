@@ -3,23 +3,6 @@ import { useAuth } from "../context/AuthContext";
 import "../styles/Login.css";
 
 export default function Login() {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  const { login } = useAuth();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setError("");
-    const result = login(email, password);
-    if (!result.success) setError(result.error);
-  };
-
-=======
->>>>>>> 9604213 (sync)
   const { login, register } = useAuth();
   const [mode, setMode] = useState("login");
   const [name, setName] = useState("");
@@ -45,10 +28,6 @@ export default function Login() {
     setError("");
   };
 
-<<<<<<< HEAD
-=======
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
   return (
     <div className="login-root">
       <div className="login-bg-grid" />
@@ -58,40 +37,6 @@ export default function Login() {
           <div className="login-logo-icon">🎫</div>
           <div className="login-logo-text">SupportDesk</div>
         </div>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        <h1 className="login-title">Welcome back</h1>
-        <p className="login-subtitle">Sign in to access your support dashboard</p>
-
-        <form onSubmit={handleSubmit}>
-          <div className="login-field">
-            <label className="login-label">Email Address</label>
-            <input
-              className="login-input"
-              type="email"
-              placeholder="you@example.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="login-field">
-            <label className="login-label">Password</label>
-            <input
-              className="login-input"
-              type="password"
-              placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          {error && <div className="login-error">⚠ {error}</div>}
-          <button type="submit" className="login-btn">Sign In →</button>
-        </form>
-=======
->>>>>>> 9604213 (sync)
         <h1 className="login-title">{isRegister ? "Create your account" : "Welcome back"}</h1>
         <p className="login-subtitle">
           {isRegister ? "Register to get help from our support team" : "Sign in to access your support dashboard"}
@@ -125,10 +70,6 @@ export default function Login() {
           {isRegister ? "Already have an account?" : "New to SupportDesk?"}{" "}
           <button type="button" onClick={switchMode}>{isRegister ? "Sign in" : "Create an account"}</button>
         </p>
-<<<<<<< HEAD
-=======
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
       </div>
     </div>
   );

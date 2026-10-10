@@ -4,15 +4,7 @@ import { StatusBadge, PriorityBadge, formatDate } from "./Badges";
 import "../styles/Dashboard.css";
 
 export default function CustomerDashboard({ onSelectTicket, onNewTicket }) {
-<<<<<<< HEAD
   const { tickets, ticketsLoading, ticketsError, refreshTickets } = useTickets();
-=======
-<<<<<<< HEAD
-  const { tickets } = useTickets();
-=======
-  const { tickets, ticketsLoading, ticketsError, refreshTickets } = useTickets();
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
   const { currentUser } = useAuth();
 
   const myTickets = tickets.filter((t) => t.customerId === currentUser.id);
@@ -32,19 +24,10 @@ export default function CustomerDashboard({ onSelectTicket, onNewTicket }) {
         <div className="dashboard-greeting-sub">Track and manage your support requests below.</div>
       </div>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 9604213 (sync)
       {ticketsError && <div className="login-error" role="alert" style={{ marginBottom: 16 }}>
         {ticketsError} <button className="btn-secondary" onClick={refreshTickets}>Retry</button>
       </div>}
 
-<<<<<<< HEAD
-=======
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
       <div className="stats-grid">
         {[
           { label: "Open Tickets", value: open, icon: "📬", color: "#4f7cff" },
@@ -55,15 +38,7 @@ export default function CustomerDashboard({ onSelectTicket, onNewTicket }) {
           <div className="stat-card" key={s.label}>
             <div className="stat-card-accent" style={{ background: s.color }} />
             <div className="stat-card-icon">{s.icon}</div>
-<<<<<<< HEAD
             <div className="stat-card-value">{ticketsLoading ? "…" : s.value}</div>
-=======
-<<<<<<< HEAD
-            <div className="stat-card-value">{s.value}</div>
-=======
-            <div className="stat-card-value">{ticketsLoading ? "…" : s.value}</div>
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
             <div className="stat-card-label">{s.label}</div>
           </div>
         ))}
@@ -75,19 +50,9 @@ export default function CustomerDashboard({ onSelectTicket, onNewTicket }) {
           <button className="btn-primary" onClick={onNewTicket}>+ New Ticket</button>
         </div>
 
-<<<<<<< HEAD
         {ticketsLoading && recent.length === 0 ? (
           <div className="empty-state"><div className="empty-state-text">Loading your tickets from the database…</div></div>
         ) : recent.length === 0 ? (
-=======
-<<<<<<< HEAD
-        {recent.length === 0 ? (
-=======
-        {ticketsLoading && recent.length === 0 ? (
-          <div className="empty-state"><div className="empty-state-text">Loading your tickets from the database…</div></div>
-        ) : recent.length === 0 ? (
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
           <div className="empty-state">
             <div className="empty-state-icon">🎫</div>
             <div className="empty-state-title">No tickets yet</div>

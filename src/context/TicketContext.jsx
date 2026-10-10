@@ -1,88 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-import { createContext, useContext, useState } from "react";
-import { INITIAL_TICKETS } from "../data/mockData";
-
-const TicketContext = createContext(null);
-
-export function TicketProvider({ children }) {
-  const [tickets, setTickets] = useState(INITIAL_TICKETS);
-
-  const createTicket = (data, user) => {
-    const newTicket = {
-      id: `TKT-${String(tickets.length + 1).padStart(3, "0")}`,
-      ...data,
-      status: "Open",
-      customerId: user.id,
-      customerName: user.name,
-      assignedAgentId: null,
-      assignedAgentName: null,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-      thread: [
-        {
-          id: 1,
-          authorId: user.id,
-          authorName: user.name,
-          role: user.role,
-          message: data.description,
-          timestamp: new Date().toISOString(),
-        },
-      ],
-    };
-    setTickets((prev) => [newTicket, ...prev]);
-    return newTicket;
-  };
-
-  const replyToTicket = (ticketId, message, user) => {
-    setTickets((prev) =>
-      prev.map((t) => {
-        if (t.id !== ticketId) return t;
-        const newReply = {
-          id: t.thread.length + 1,
-          authorId: user.id,
-          authorName: user.name,
-          role: user.role,
-          message,
-          timestamp: new Date().toISOString(),
-        };
-        return { ...t, thread: [...t.thread, newReply], updatedAt: new Date().toISOString() };
-      })
-    );
-  };
-
-  const updateTicketStatus = (ticketId, status) => {
-    setTickets((prev) =>
-      prev.map((t) =>
-        t.id === ticketId ? { ...t, status, updatedAt: new Date().toISOString() } : t
-      )
-    );
-  };
-
-  const assignTicket = (ticketId, agent) => {
-    setTickets((prev) =>
-      prev.map((t) =>
-        t.id === ticketId
-          ? {
-              ...t,
-              assignedAgentId: agent ? agent.id : null,
-              assignedAgentName: agent ? agent.name : null,
-              updatedAt: new Date().toISOString(),
-            }
-          : t
-      )
-    );
-  };
-
-  const getTicketById = (id) => tickets.find((t) => t.id === id);
-
-  return (
-    <TicketContext.Provider
-      value={{ tickets, createTicket, replyToTicket, updateTicketStatus, assignTicket, getTicketById }}
-    >
-=======
->>>>>>> 9604213 (sync)
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { useAuth } from "./AuthContext";
 
@@ -180,10 +95,6 @@ export function TicketProvider({ children }) {
       tickets, ticketsLoading, ticketsError, refreshTickets, createTicket,
       replyToTicket, updateTicketStatus, assignTicket, getTicketById, agents,
     }}>
-<<<<<<< HEAD
-=======
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
       {children}
     </TicketContext.Provider>
   );

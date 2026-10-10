@@ -1,28 +1,12 @@
 import { useState } from "react";
 import { useTickets } from "../context/TicketContext";
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-import { useAuth } from "../context/AuthContext";
-=======
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
 import { CATEGORIES, PRIORITIES } from "../data/mockData";
 import "../styles/Modal.css";
 
 export default function NewTicketModal({ onClose, onCreated }) {
   const { createTicket } = useTickets();
-<<<<<<< HEAD
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
-=======
-<<<<<<< HEAD
-  const { currentUser } = useAuth();
-=======
-  const [error, setError] = useState("");
-  const [busy, setBusy] = useState(false);
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
   const [form, setForm] = useState({
     title: "",
     description: "",
@@ -32,17 +16,6 @@ export default function NewTicketModal({ onClose, onCreated }) {
 
   const set = (k, v) => setForm((f) => ({ ...f, [k]: v }));
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!form.title.trim() || !form.description.trim()) return;
-    const ticket = createTicket(form, currentUser);
-    onCreated && onCreated(ticket);
-    onClose();
-=======
->>>>>>> 9604213 (sync)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -56,10 +29,6 @@ export default function NewTicketModal({ onClose, onCreated }) {
     } finally {
       setBusy(false);
     }
-<<<<<<< HEAD
-=======
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
   };
 
   return (
@@ -69,14 +38,7 @@ export default function NewTicketModal({ onClose, onCreated }) {
         <div className="modal-subtitle">Describe your issue and our team will get back to you soon.</div>
 
         <form onSubmit={handleSubmit}>
-<<<<<<< HEAD
           {error && <div className="login-error" role="alert">{error}</div>}
-=======
-<<<<<<< HEAD
-=======
-          {error && <div className="login-error" role="alert">{error}</div>}
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
           <div className="modal-field">
             <label className="modal-label">Issue Title</label>
             <input
@@ -115,18 +77,8 @@ export default function NewTicketModal({ onClose, onCreated }) {
           </div>
 
           <div className="modal-actions">
-<<<<<<< HEAD
             <button type="button" className="btn-secondary" onClick={onClose} disabled={busy}>Cancel</button>
             <button type="submit" className="btn-primary" disabled={busy}>{busy ? "Submitting…" : "🎫 Submit Ticket"}</button>
-=======
-<<<<<<< HEAD
-            <button type="button" className="btn-secondary" onClick={onClose}>Cancel</button>
-            <button type="submit" className="btn-primary">🎫 Submit Ticket</button>
-=======
-            <button type="button" className="btn-secondary" onClick={onClose} disabled={busy}>Cancel</button>
-            <button type="submit" className="btn-primary" disabled={busy}>{busy ? "Submitting…" : "🎫 Submit Ticket"}</button>
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
           </div>
         </form>
       </div>

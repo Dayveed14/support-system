@@ -1,12 +1,4 @@
-<<<<<<< HEAD
 import { useEffect, useState } from "react";
-=======
-<<<<<<< HEAD
-import { useState } from "react";
-=======
-import { useEffect, useState } from "react";
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
 import { useAuth } from "./context/AuthContext";
 import { useTickets } from "./context/TicketContext";
 
@@ -21,25 +13,12 @@ import NewTicketModal from "./components/NewTicketModal";
 import AgentsPage from "./components/AgentsPage";
 
 function AppInner() {
-<<<<<<< HEAD
   const { currentUser, authLoading } = useAuth();
-=======
-<<<<<<< HEAD
-  const { currentUser } = useAuth();
-=======
-  const { currentUser, authLoading } = useAuth();
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
   const { tickets } = useTickets();
   const [page, setPage] = useState("dashboard");
   const [selectedTicketId, setSelectedTicketId] = useState(null);
   const [showNewTicket, setShowNewTicket] = useState(false);
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 9604213 (sync)
   useEffect(() => {
     if (currentUser) {
       setPage("dashboard");
@@ -49,10 +28,6 @@ function AppInner() {
   }, [currentUser?.id, currentUser?.role]);
 
   if (authLoading) return <div className="auth-loading">Loading SupportDesk…</div>;
-<<<<<<< HEAD
-=======
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
   if (!currentUser) return <Login />;
 
   const navigate = (p) => {

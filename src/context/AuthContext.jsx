@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-import { createContext, useContext, useState } from "react";
-import { USERS } from "../data/mockData";
-
-const AuthContext = createContext(null);
-
-export function AuthProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState(null);
-
-  const login = (email, password) => {
-    const user = USERS.find((u) => u.email === email && u.password === password);
-    if (user) {
-      setCurrentUser(user);
-      return { success: true, user };
-    }
-    return { success: false, error: "Invalid email or password." };
-  };
-
-  const logout = () => setCurrentUser(null);
-
-  return (
-    <AuthContext.Provider value={{ currentUser, login, logout }}>
-=======
->>>>>>> 9604213 (sync)
 import { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext(null);
@@ -98,10 +72,6 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider value={{ currentUser, authLoading, login, register, logout }}>
-<<<<<<< HEAD
-=======
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
       {children}
     </AuthContext.Provider>
   );

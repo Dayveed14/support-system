@@ -1,27 +1,10 @@
 import { useTickets } from "../context/TicketContext";
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-import { USERS } from "../data/mockData";
-import { StatusBadge } from "./Badges";
-import "../styles/Dashboard.css";
-
-const AGENTS = USERS.filter((u) => u.role === "agent");
-
-export default function AgentsPage({ onSelectTicket }) {
-  const { tickets } = useTickets();
-=======
->>>>>>> 9604213 (sync)
 
 import { StatusBadge } from "./Badges";
 import "../styles/Dashboard.css";
 
 export default function AgentsPage({ onSelectTicket }) {
   const { tickets, agents } = useTickets();
-<<<<<<< HEAD
-=======
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
 
   return (
     <div>
@@ -31,15 +14,7 @@ export default function AgentsPage({ onSelectTicket }) {
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-<<<<<<< HEAD
         {agents.map((agent) => {
-=======
-<<<<<<< HEAD
-        {AGENTS.map((agent) => {
-=======
-        {agents.map((agent) => {
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
           const agentTickets = tickets.filter((t) => t.assignedAgentId === agent.id);
           const open = agentTickets.filter((t) => t.status === "Open").length;
           const pending = agentTickets.filter((t) => t.status === "Pending").length;
@@ -54,15 +29,7 @@ export default function AgentsPage({ onSelectTicket }) {
                   background: "var(--accent-glow)", border: "1px solid var(--accent)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   fontWeight: 700, color: "var(--accent)", fontSize: 14
-<<<<<<< HEAD
                 }}>{agent.name.split(" ").map((part) => part[0]).join("").slice(0, 2)}</div>
-=======
-<<<<<<< HEAD
-                }}>{agent.avatar}</div>
-=======
-                }}>{agent.name.split(" ").map((part) => part[0]).join("").slice(0, 2)}</div>
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
                 <div>
                   <div style={{ fontFamily: "var(--font-display)", fontSize: 17, fontWeight: 700, color: "var(--text-primary)" }}>
                     {agent.name}
@@ -107,14 +74,7 @@ export default function AgentsPage({ onSelectTicket }) {
             </div>
           );
         })}
-<<<<<<< HEAD
         {agents.length === 0 && <div className="dashboard-card" style={{ color: "var(--text-muted)" }}>No support agents have been registered yet. Promote a user to the agent role in MySQL to make them available here.</div>}
-=======
-<<<<<<< HEAD
-=======
-        {agents.length === 0 && <div className="dashboard-card" style={{ color: "var(--text-muted)" }}>No support agents have been registered yet. Promote a user to the agent role in MySQL to make them available here.</div>}
->>>>>>> daddf48 (linked backend)
->>>>>>> 9604213 (sync)
       </div>
     </div>
   );
